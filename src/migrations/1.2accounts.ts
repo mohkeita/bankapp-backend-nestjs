@@ -31,6 +31,12 @@ export async function up(i: any) {
         key: 'id',
       },
     },
+    createdAt: {
+      type: Sequelize.DATE,
+    },
+    updateAt: {
+      type: Sequelize.DATE,
+    },
   });
 };
 

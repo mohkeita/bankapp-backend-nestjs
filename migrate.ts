@@ -1,13 +1,14 @@
 import { Sequelize } from 'sequelize-typescript';
 import Umzug = require('umzug');
+require('dotenv').config();
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
-  host: 'localhost',
+  host: process.env.DB_HOST,
   port: 5433,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'bankappnode'
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
 });
 
 const umzug = new Umzug({
