@@ -23,6 +23,9 @@ export class UsersService {
       const newUser: any = await this.usersRepository.create<Users>(user);
       const jwtToken = jwt.sign(user, process.env.JWT_KEY, jwtConfig);
       newUser.Token = jwtToken;
+      if (newUser) {
+        await this.accountsService.create(newUser.id);
+      }
       return newUser;
     }
   }

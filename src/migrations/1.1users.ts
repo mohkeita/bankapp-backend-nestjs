@@ -31,7 +31,7 @@ export async function up(i: any) {
     createdAt: {
       type: Sequelize.DATE,
     },
-    updateAt: {
+    updatedAt: {
       type: Sequelize.DATE,
     },
   });

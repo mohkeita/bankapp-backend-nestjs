@@ -1,9 +1,10 @@
 import { Sequelize } from 'sequelize-typescript';
 import { Users } from '../user/user.entity';
+import { Accounts } from '../accounts/accounts.entity';
 
 export const databaseProvider = [
   {
-    provider: 'SEQUELIZE',
+    provide: 'SEQUELIZE',
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'postgres',
@@ -13,7 +14,7 @@ export const databaseProvider = [
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
       });
-      sequelize.addModels([Users]);
+      sequelize.addModels([Users, Accounts]);
       return sequelize;
     }
   }
