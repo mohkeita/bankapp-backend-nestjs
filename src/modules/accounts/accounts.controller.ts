@@ -6,6 +6,7 @@ export class AccountsController {
   constructor(private accountsService: AccountsService) {
   }
 
+  /*
   @Post('create-account')
   public async register(@Body() UserId: number): Promise<any> {
     const result: any = await this.accountsService.create(UserId);
@@ -14,4 +15,6 @@ export class AccountsController {
     }
     return result;
   }
+
+   */
 }
